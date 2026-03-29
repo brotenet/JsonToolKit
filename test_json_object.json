@@ -1,0 +1,144 @@
+{
+	"demoData": {
+		"metadata": {
+			"version": "1.2",
+			"description": "A comprehensive demo dataset showcasing various data types and relationships.",
+			"created_by": "AI Demo Generator",
+			"creation_date": "2023-10-27T14:35:00Z",
+			"data_source": "Synthetic Data Generation"
+		},
+		"users": [
+			{
+				"user_id": 1,
+				"username": "john.doe",
+				"email": "john.doe@example.com",
+				"first_name": "John",
+				"last_name": "Doe",
+				"age": 32,
+				"location": {
+					"city": "New York",
+					"state": "NY",
+					"zip_code": "10001",
+					"coordinates": {
+						"latitude": 40.7128,
+						"longitude": -74.0060
+					}
+				},
+				"preferences": [
+					"technology",
+					"travel",
+					"music"
+				],
+				"orders": [
+					{
+						"order_id": 101,
+						"order_date": "2023-10-26T18:00:00Z",
+						"total_amount": 75.99,
+						"items": [
+							{
+								"product_id": "P001",
+								"quantity": 2,
+								"price": 25.00
+							},
+							{
+								"product_id": "P003",
+								"quantity": 1,
+								"price": 50.99
+							}
+						],
+						"shipping_address": {
+							"street": "123 Main St",
+							"city": "New York",
+							"state": "NY",
+							"zip_code": "10001"
+						}
+					},
+					{
+						"order_id": 102,
+						"order_date": "2023-10-27T10:30:00Z",
+						"total_amount": 129.50,
+						"items": [
+							{
+								"product_id": "P002",
+								"quantity": 3,
+								"price": 45.00
+							}
+						],
+						"shipping_address": {
+							"street": "456 Oak Ave",
+							"city": "Los Angeles",
+							"state": "CA",
+							"zip_code": "90001"
+						}
+					}
+				]
+			},
+			{
+				"user_id": 2,
+				"username": "jane.smith",
+				"email": "jane.smith@example.com",
+				"first_name": "Jane",
+				"last_name": "Smith",
+				"age": 28,
+				"location": {
+					"city": "Chicago",
+					"state": "IL",
+					"zip_code": "60601",
+					"coordinates": {
+						"latitude": 41.8781,
+						"longitude": -87.6298
+					}
+				},
+				"preferences": [
+					"books",
+					"movies",
+					"cooking"
+				],
+				"orders": []
+			}
+		],
+		"products": [
+			{
+				"product_id": "P001",
+				"name": "Wireless Headphones",
+				"description": "High-quality wireless headphones with noise cancellation.",
+				"category": "Electronics",
+				"price": 25.00,
+				"stock_quantity": 100,
+				"image_url": "https://example.com/images/headphones.jpg"
+			},
+			{
+				"product_id": "P002",
+				"name": "Coffee Maker",
+				"description": "Automatic coffee maker with programmable timer.",
+				"category": "Appliances",
+				"price": 45.00,
+				"stock_quantity": 50,
+				"image_url": "https://example.com/images/coffee_maker.jpg"
+			},
+			{
+				"product_id": "P003",
+				"name": "Leather Journal",
+				"description": "Handcrafted leather journal with blank pages.",
+				"category": "Stationery",
+				"price": 50.99,
+				"stock_quantity": 25,
+				"image_url": "https://example.com/images/journal.jpg"
+			}
+		],
+		"categories": [
+			{
+				"category_id": "E",
+				"name": "Electronics"
+			},
+			{
+				"category_id": "A",
+				"name": "Appliances"
+			},
+			{
+				"category_id": "S",
+				"name": "Stationery"
+			}
+		]
+	}
+}

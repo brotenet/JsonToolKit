@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="JsonToolKit" default="build-all" basedir=".">
+
+	<property name="project.name" value="json-toolkit"/>
+	<property name="project.version" value="0.0.1"/>
+	<property name="src.dir" value="src"/>
+	<property name="lib.dir" value="lib"/>
+    <property name="build.dir" value="bin"/>
+    <property name="jar.name" value="${project.name}-${project.version}.jar"/>
+
+    <!-- Clean target -->
+    <target name="clean">
+        <delete dir="build"/>
+    </target>
+
+    <!-- Compile sources -->
+    <target name="compile">
+        <mkdir dir="${build.dir}"/>
+        <javac srcdir="${src.dir}" destdir="${build.dir}" includeantruntime="false">
+        </javac>
+
+        <!-- Copy all non-Java files (resources) from src to build -->
+        <copy todir="${build.dir}">
+            <fileset dir="${src.dir}" excludes="**/*.java"/>
+        </copy>
+    </target>
+
+    <!-- Create application JAR -->
+    <target name="jar" depends="compile">
+        <jar destfile="build/lib/${jar.name}" basedir="${build.dir}">
+        	<include name="openjdk/**"/>
+        </jar>
+    </target>
+
+    <!-- Copy JARs and dependencies to build/lib -->
+    <target name="copy-lib" depends="jar">
+        <mkdir dir="build/lib"/>
+        <copy todir="build/lib">
+            <fileset dir="${lib.dir}" includes="**/*.jar"/>
+        </copy>
+    </target>
+
+    <!-- Copy project files excluding certain directories/files -->
+    <target name="copy-project" depends="copy-lib">
+        <mkdir dir="build"/>
+        <copy todir="build" overwrite="true">
+            <fileset dir="." excludes="*.launch,build.xml,build/**,src/**,bin/**,lib/**,.settings/**,.classpath,.project,dist/**"/>
+        </copy>
+    	<chmod file="build/run" perm="755"/>
+    </target>
+
+    <!-- Build everything -->
+    <target name="build-all" depends="clean,copy-project"/>
+    
+</project>
