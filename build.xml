@@ -35,9 +35,9 @@
     <!-- Copy JARs and dependencies to build/lib -->
     <target name="copy-lib" depends="jar">
         <mkdir dir="build/lib"/>
-        <copy todir="build/lib">
+        <!--<copy todir="build/lib">
             <fileset dir="${lib.dir}" includes="**/*.jar"/>
-        </copy>
+        </copy>-->
     </target>
 
     <!-- Copy project files excluding certain directories/files -->
